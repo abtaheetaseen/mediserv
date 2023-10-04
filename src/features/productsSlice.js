@@ -4,14 +4,15 @@ import axios from 'axios';
 const initialState = {
     items: [],
     isLoading: null,
-    error: null
+    error: null,
+    searchText: ''
 }
  
 export const productsFetch = createAsyncThunk(
     'products/productsFetch',
     async() => {
-        const response = await axios.get('http://localhost:5000/products')
-        return response?.data
+        const response = await axios.get('https://taseenapi-p5hts62j7-abtahee-taseens-projects.vercel.app/service')
+        return response?.data 
     }
 )
 
@@ -37,5 +38,6 @@ const productsSlice = createSlice({
         })
     }
 })
+
 
 export default productsSlice.reducer

@@ -6,8 +6,6 @@ import { addToCart } from './features/cartSlice';
 
 const Store = () => {
 
-  
-
   const {items, isLoading, error} = useSelector(state => state.products);
 
   const [storeItem, setStoreItem] = useState(items);
@@ -32,6 +30,7 @@ const Store = () => {
   return (
     
    <>
+   <div>
       <div className="total-container-left">
           <button className='store-btn' onClick={() => setStoreItem(items)}>All</button><br />
           <button className='store-btn' onClick={() => filterItem('moisturizer')}>Moisturizer</button><br />
@@ -66,6 +65,7 @@ const Store = () => {
           })}
         </div>
       </>)} 
+    </div>
     </div>
     </>
   )
